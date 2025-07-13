@@ -11,6 +11,13 @@
 %  Font Settings
 %--------------------------------------
 
+% Use TeX Gyre Heros (Helvetica clone) - works with pdfLaTeX
+\usepackage[T1]{fontenc}
+\usepackage{tgheros}
+\renewcommand{\rmdefault}{qhv}
+\renewcommand{\sfdefault}{qhv}
+\renewcommand{\familydefault}{\sfdefault}
+
 \setbeamerfont{structure}{family=\sffamily,series=\mdseries}
 
 \setbeamerfont{title}{size=\LARGE,series=\bfseries,parent=structure}

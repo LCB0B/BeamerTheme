@@ -16,7 +16,12 @@ color(0pt)=(lower.bg); color(2pt)=(lower.bg); color(4pt)=(lower.bg)}
 
 \setbeamersize{text margin left=2em,text margin right=2em}
 
-\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{footline}{%
+    \hfill%
+    \usebeamerfont{page number in head/foot}%
+    \usebeamercolor[fg]{page number in head/foot}%
+    \insertframenumber\hspace*{1em}\vskip1em%
+}
 \setbeamertemplate{navigation symbols}{}
 
 \setbeamertemplate{blocks}[rounded][shadow=false]
@@ -38,18 +43,16 @@ color(0pt)=(lower.bg); color(2pt)=(lower.bg); color(4pt)=(lower.bg)}
 % frame title customization
 \setbeamertemplate{frametitle}{%
     \vspace*{0.5em}
-    \bfseries\insertframetitle\par
-    \vskip-6pt
-    \hrulefill\vspace{-0.1em}
+    \textbf{\insertframetitle}\par
+    \vskip0.3em
 }
 
 % title page customization
 \setbeamertemplate{title page}{%
     \vspace{6em}
     \begingroup
-    \centering
     % ------------------------
-    \begin{beamercolorbox}[sep=10pt,center]{title}
+    \begin{beamercolorbox}[sep=10pt,left]{title}
         \usebeamerfont{title}\inserttitle\par%
         \ifx\insertsubtitle\@empty%
         \else%
@@ -57,20 +60,22 @@ color(0pt)=(lower.bg); color(2pt)=(lower.bg); color(4pt)=(lower.bg)}
         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
         \fi%
     \end{beamercolorbox}%
-    \vskip0.5em\par
+    \vskip2em
     % ------------------------
-    \begin{beamercolorbox}[sep=8pt,center]{author}
+    \begin{beamercolorbox}[sep=8pt,left]{author}
         \usebeamerfont{author}\insertauthor
     \end{beamercolorbox}
-    \vskip-1em
+    \vskip1em
     % ------------------------
-    \begin{beamercolorbox}[sep=8pt,center]{institute}
-        \usebeamerfont{institute}\insertinstitute
-    \end{beamercolorbox}
-    % ------------------------
-    \begin{beamercolorbox}[sep=8pt,center]{date}
-        \usebeamerfont{date}\insertdate
-    \end{beamercolorbox}\vskip0.5em
+    \hbox to \textwidth{%
+        \begin{beamercolorbox}[sep=8pt,left,wd=0.8\textwidth]{institute}
+           \usebeamerfont{institute}\insertinstitute
+        \end{beamercolorbox}%
+        \hfill%
+        \begin{beamercolorbox}[sep=8pt,right,wd=0.2\textwidth]{date}
+            \usebeamerfont{date}\insertdate
+        \end{beamercolorbox}%
+    }
     % ------------------------
     {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
     \endgroup
