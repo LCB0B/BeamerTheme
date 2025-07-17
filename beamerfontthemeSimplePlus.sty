@@ -14,18 +14,22 @@
 % Use TeX Gyre Heros (Helvetica clone) - works with pdfLaTeX
 \usepackage[T1]{fontenc}
 \usepackage{tgheros}
+\usepackage{tikz}
 \renewcommand{\rmdefault}{qhv}
 \renewcommand{\sfdefault}{qhv}
 \renewcommand{\familydefault}{\sfdefault}
 
-\setbeamerfont{structure}{family=\sffamily,series=\mdseries}
+\setbeamerfont{structure}{size=\small,family=\sffamily,series=\mdseries}
+
+\setbeamerfont{normal text}{size=\small,family=\sffamily,series=\mdseries}
+\setbeamerfont{item}{size=\small,family=\sffamily,series=\mdseries}
 
 \setbeamerfont{title}{size=\LARGE,series=\bfseries,parent=structure}
 \setbeamerfont{subtitle}{size=\normalsize,parent=title}
 
 \setbeamerfont{date}{size=\scriptsize,series=\mdseries,parent=structure}
-\setbeamerfont{author}{size=\large,series=\mdseries,parent=structure}
-\setbeamerfont{institute}{size=\scriptsize,series=\mdseries,parent=structure}
+\setbeamerfont{author}{size=\small,series=\mdseries,parent=structure}
+\setbeamerfont{institute}{size=\small,series=\mdseries,parent=structure}
 
 \setbeamerfont{section in toc}{size=\large,series=\bfseries,parent=structure}
 \setbeamerfont{section in head/foot}{size=\tiny,parent=structure}
@@ -36,4 +40,9 @@
 
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamerfont{item}{parent=structure,series=\mdseries}
-\setbeamerfont{block title}{size=\large,series=\mdseries,parent={structure,block body}}
+\setbeamerfont{block title}{size=\small,series=\mdseries,parent={structure,block body}}
+\setbeamerfont{block body}{size=\small,family=\sffamily,series=\mdseries}
+\setbeamerfont{alertblock title}{size=\small,series=\bfseries,parent={structure,block body}}
+\setbeamerfont{alertblock body}{size=\small,family=\sffamily,series=\mdseries}
+\setbeamerfont{block example title}{size=\small,series=\bfseries,parent={structure,block body}}
+\setbeamerfont{block example body}{size=\small,family=\sffamily,series=\mdseries}

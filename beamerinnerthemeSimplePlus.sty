@@ -16,12 +16,7 @@ color(0pt)=(lower.bg); color(2pt)=(lower.bg); color(4pt)=(lower.bg)}
 
 \setbeamersize{text margin left=2em,text margin right=2em}
 
-\setbeamertemplate{footline}{%
-    \hfill%
-    \usebeamerfont{page number in head/foot}%
-    \usebeamercolor[fg]{page number in head/foot}%
-    \insertframenumber\hspace*{1em}\vskip1em%
-}
+
 \setbeamertemplate{navigation symbols}{}
 
 \setbeamertemplate{blocks}[rounded][shadow=false]
@@ -48,8 +43,16 @@ color(0pt)=(lower.bg); color(2pt)=(lower.bg); color(4pt)=(lower.bg)}
 }
 
 % title page customization
-\setbeamertemplate{title page}{%
-    \vspace{6em}
+\setbeamertemplate{title page}{
+    
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north west,xshift=1cm,yshift=-1cm] at (current page.north west) {
+            \includegraphics[height=2cm]{figures/logo_scl_text.png}
+        };
+    \end{tikzpicture}
+
+%
+    \vskip8em
     \begingroup
     % ------------------------
     \begin{beamercolorbox}[sep=10pt,left]{title}
@@ -60,24 +63,52 @@ color(0pt)=(lower.bg); color(2pt)=(lower.bg); color(4pt)=(lower.bg)}
         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
         \fi%
     \end{beamercolorbox}%
+    % ------------------------
     \vskip2em
-    % ------------------------
-    \begin{beamercolorbox}[sep=8pt,left]{author}
+    \begin{beamercolorbox}[sep=8pt,left,wd=\textwidth]{author}
         \usebeamerfont{author}\insertauthor
-    \end{beamercolorbox}
-    \vskip1em
+    \end{beamercolorbox}%
     % ------------------------
-    \hbox to \textwidth{%
-        \begin{beamercolorbox}[sep=8pt,left,wd=0.8\textwidth]{institute}
-           \usebeamerfont{institute}\insertinstitute
-        \end{beamercolorbox}%
-        \hfill%
-        \begin{beamercolorbox}[sep=8pt,right,wd=0.2\textwidth]{date}
-            \usebeamerfont{date}\insertdate
-        \end{beamercolorbox}%
-    }
-    % ------------------------
-    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    % \vskip2em
+    % \hbox to \textwidth{%
+    %     \begin{beamercolorbox}[sep=8pt,left,wd=0.8\textwidth]{institute}
+    %        \usebeamerfont{institute}louisboucherie.com
+    %     \end{beamercolorbox}%
+    %     \hfill%
+    %     \begin{beamercolorbox}[sep=8pt,right,wd=0.2\textwidth]{date}
+    %         \usebeamerfont{date}\insertdate
+    %     \end{beamercolorbox}%
+    % }
+    % % ------------------------
+    % {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
     \endgroup
     \vfill
+}
+
+% \setbeamertemplate{footline}{%
+%     \hbox to \textwidth{%
+%         % Slide number on the left
+%         \begin{beamercolorbox}[sep=8pt,center,wd=0.8\textwidth]{page number in head/foot}
+%             \usebeamerfont{page number in head/foot}\hspace{5em}\color{gray}\insertframenumber
+%         \end{beamercolorbox}%
+%         \hfill%
+%         % Website link on the right
+%         \begin{beamercolorbox}[sep=8pt,right,wd=0.2\textwidth]{institute}
+%             \scriptsize\ttfamily\color{gray} \hspace{-5em}\href{https://louisboucherie.com}{louisboucherie.com}
+%         \end{beamercolorbox}%
+%     }%
+%     \vskip1em%
+% }
+
+\setbeamertemplate{footline}{%
+    \hbox to \textwidth{%
+        % Slide number at the center
+        \makebox[\textwidth][c]{%
+            \usebeamerfont{page number in head/foot}\color{gray}\insertframenumber
+        }%
+        % Website link on the right
+        \hspace{-16em}%
+        \scriptsize\ttfamily\color{gray}\href{https://louisboucherie.com}{louisboucherie.com}
+    }%
+    \vskip2em%
 }
