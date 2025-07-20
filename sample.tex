@@ -438,7 +438,7 @@
             %Are these two evolution linked?
                         \vspace{1em}
 
-            \textbf{How do these two evolutions relate?}\\
+            \textbf{How does these two evolutions relate?}\\
         \end{center}
     }
 \end{frame}
@@ -455,20 +455,54 @@
 
 \begin{frame}[t]
     \frametitle{Evolution of Intersectionality of Diversity (Ethnicity)}
-    \begin{figure}
+    
+
+    
+    \vspace{0.5em}
+    \begin{columns}
+
+          \column{0.6\textwidth}
+                   \begin{figure}
             \begin{center}
-            \includegraphics[width=0.6\textwidth]{figures/plus_size_rates_by_race.png}
+            \includegraphics[width=\textwidth]{figures/plus_size_rates_by_race.png}
             \end{center}
         \end{figure}
+        
+        \column{0.4\textwidth}
+            \textbf{Plus-Size Rates by Race:}
+            \vspace{0.4em}
+            \begin{itemize}
+                \setlength{\itemsep}{0.4em}
+                \pause \item Non-white models consistently show higher plus-size rates
+                \pause \item Gap between groups is widening over time
+                \pause \item Clear intersectionality between race and body size representation
+            \end{itemize}
+        
+      
+    \end{columns}
 \end{frame}
+
+
 
 \begin{frame}[t]
     \frametitle{Evolution of Intersectionality of Diversity (Ethnicity)}
+     \begin{columns}
+
+          \column{0.6\textwidth}
     \begin{figure}
             \begin{center}
-            \includegraphics[width=0.6\textwidth]{figures/race_odds_ratio_trends_odds_ratio.png}
+            \includegraphics[width=\textwidth]{figures/race_odds_ratio_trends_odds_ratio.png}
             \end{center}
         \end{figure}
+
+ \column{0.4\textwidth}
+        \begin{itemize}
+    \setlength{\itemsep}{1em}
+    \pause \item \textbf{Interaction Model:} \texttt{plus\_sized \textasciitilde{} race * year} captures how racial differences in plus-size representation evolve over time, not just static differences
+    \pause \item \textbf{Dynamic Odds Ratio:} $OR = \exp(\beta_{1} + \beta_{3} \times \text{year})$ provides a different odds ratio for each year, revealing whether racial disparities are widening or narrowing
+\end{itemize}
+    \end{columns}
+
 \end{frame}
 
 \begin{frame}[t]
